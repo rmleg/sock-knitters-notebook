@@ -21,28 +21,65 @@
         <![endif]-->
     </head>
     <body>
-        <div id="calculator" ng-controller="StitchCalc">
-        <h1>Calculate stitches needed (10% negative ease included)</h1>
-        <form name="calc-sts">
-            <label>Stitches per inch:
-                <input type="text" ng-model="stsPerIn"></input>
-            </label><br />
-            <label>Circumference of foot:
-                <input type="text" ng-model="circumference"></input>
-            </label>
-        </form>
-        <p class="ng-cloak">You need {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches.</p>
+        <div class="container">
+            <div id="calculator" ng-controller="StitchCalc" class="{{constrDir}} {{heelType}}">
+                <h1>Generate a Sock Recipe</h1>
+                <p>This page will walk you through building a personalized sock recipe so you can knit perfectly-fitted socks for everyone you know.  This gives you the basic outline of a vanilla sock--trial and error with this as a baseline will help you get that perfect comfy fit.</p>
+                <p>Do not refresh the page, or all data will be lost and you will have to start over.</p>
+                <h2>Gauge and Size Information</h2>
+                <form name="calc-sts">
+                    <p>
+                        <label>Stitches per inch:
+                            <input type="text" ng-model="stsPerIn"></input>
+                        </label>
+                    </p>
+                    <p>
+                        <label>Circumference of foot in inches:
+                            <input type="text" ng-model="circumference"></input>
+                        </label>
+                    </p>
+                    <p>
+                        <label>Length of foot in inches:
+                            <input type="text" ng-model="length"></input>
+                        </label>
+                    </p>
+                </form>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-    </body>
+                <h2>Construction Information</h2>
+
+                <h3>Which direction do you want to knit the socks?</h3>
+                <form>
+                    <p><input type="radio" name="constrDir" value="toeUp" ng-model="constrDir"> Toe Up</input></p>
+                    <p><input type="radio" name="constrDir" value="cuffDown" ng-model="constrDir"> Cuff Down</input></p>
+                </form>
+                <p id="construction" class="hide {{constrDir}}">Your toe-up sock recipe will include a short-row heel.</p>
+            
+                <div id="heel-choice" class="hide {{constrDir}}">
+                    <!--- only show for cuff down -->
+                    <h3>What kind of heel do you want to use?</h3>
+                    <form>
+                        <p><input type="radio" name="heelType" value="flap" class="top-down-heel" ng-model="heelType"> Heel flap with turn and gusset</input></p>
+                        <p><input type="radio" name="heelType" value="shortRow" class="top-down-heel toe-up-heel" ng-model="heelType"> Short row heel</input></p>
+                    </form>
+                </div>
+
+                <div class="hide" id="cuff-down-recipe">
+                    <p>Cast on {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches</p>
+                </div>
+                <div class="hide" id="toe-up-recipe">
+                    <p>Toe up recipe here</p>
+                </div>
+            </div>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/app.js"></script>
+            <script src="js/filters.js"></script>
+            <script src="view1/view1.js"></script>
+            <script src="view2/view2.js"></script>
+            <script src="components/version/version.js"></script>
+            <script src="components/version/version-directive.js"></script>
+            <script src="components/version/interpolate-filter.js"></script>
+        </body>
 </html>

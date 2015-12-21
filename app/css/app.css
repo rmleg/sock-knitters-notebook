@@ -28,3 +28,24 @@
   content: "";
   padding: 0;
 }
+
+.hide {
+    display: none;
+}
+
+#construction.toeUp {
+    display: block !important;
+}
+
+#heel-choice.cuffDown {
+    display: block !important;
+}
+
+#calculator.toeUp #toe-up-recipe {
+    display: block !important;
+}
+
+#calculator.cuffDown.shortRow #cuff-down-recipe,
+#calculator.cuffDown.flap #cuff-down-recipe {
+    display: block !important;
+}
