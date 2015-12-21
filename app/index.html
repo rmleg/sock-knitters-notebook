@@ -19,6 +19,7 @@
         <![endif]-->
     </head>
     <body>
+        <div id="calculator" ng-controller="StitchCalc">
         <h1>Calculate stitches needed (10% negative ease included)</h1>
         <form name="calc-sts">
             <label>Stitches per inch:
@@ -28,7 +29,7 @@
                 <input type="text" ng-model="circumference"></input>
             </label>
         </form>
-        <p>You need {{0.9 * stsPerIn * circumference | floorFour | number}} stitches</p>
+        <p>You need {{needSts(stsPerIn, circumference) | floorFour | number}} stitches.</p>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
