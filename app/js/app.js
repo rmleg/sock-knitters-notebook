@@ -1,8 +1,6 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-var SockKnittersApp = angular.module('ngSockKnittersApp', []);
+var SockKnittersApp = angular.module('sknApp', [
+        'sknFilters']);
 
-SockKnittersApp.controller('printName', ['$scope', function($scope) {
-    $scope.name = 'World'
-}]);
