@@ -26,28 +26,28 @@
                 <h1>Generate a Sock Recipe</h1>
                 <p>This page will walk you through building a personalized sock recipe so you can knit perfectly-fitted socks for everyone you know.  This gives you the basic outline of a vanilla sock--trial and error with this as a baseline will help you get that perfect comfy fit.</p>
                 <p>Do not refresh the page, or all data will be lost and you will have to start over.</p>
-                <h2>Gauge and Size Information</h2>
+                <h3>Gauge and Size Information</h3>
                 <form name="calc-sts">
                     <p>
                         <label>Stitches per inch:
-                            <input type="text" ng-model="stsPerIn"></input>
                         </label>
+                            <input type="text" ng-model="stsPerIn"></input>
                     </p>
                     <p>
                         <label>Circumference of foot in inches:
-                            <input type="text" ng-model="circumference"></input>
                         </label>
+                            <input type="text" ng-model="circumference"></input>
                     </p>
                     <p>
                         <label>Length of foot in inches:
-                            <input type="text" ng-model="length"></input>
                         </label>
+                            <input type="text" ng-model="length"></input>
                     </p>
                 </form>
 
-                <h2>Construction Information</h2>
+                <h3>Construction Information</h3>
 
-                <h3>Which direction do you want to knit the socks?</h3>
+                <p><strong>Which direction do you want to knit the socks?</strong></p>
                 <form>
                     <p><input type="radio" name="constrDir" value="toeUp" ng-model="constrDir"> Toe Up</input></p>
                     <p><input type="radio" name="constrDir" value="cuffDown" ng-model="constrDir"> Cuff Down</input></p>
@@ -56,20 +56,33 @@
             
                 <div id="heel-choice" class="hide {{constrDir}}">
                     <!--- only show for cuff down -->
-                    <h3>What kind of heel do you want to use?</h3>
+                    <p><strong>What kind of heel do you want to use?</strong></p>
                     <form>
                         <p><input type="radio" name="heelType" value="flap" class="top-down-heel" ng-model="heelType"> Heel flap with turn and gusset</input></p>
                         <p><input type="radio" name="heelType" value="shortRow" class="top-down-heel toe-up-heel" ng-model="heelType"> Short row heel</input></p>
                     </form>
-                </div>
+                </div><!---#heel-choice-->
+
+                <div class="hide" id="shared-recipe">
+                    <h2>Your Sock Recipe</h2>
+                    <h3>Abbreviations</h3>
+                    <p class="abbrList">k = knit<br />p = purl<br />sl = slip (purlwise unless otherwise specified<br />wyib = with yarn in back<br />wyif = with yarn in front<br />p2tog = purl two together<br />ssk = <a href="https://www.lionbrand.com/faq/80.html?language=" target="_blank">slip, slip, knit</a><br />RS = right side<br />WS = wrong side</p>
+                </div><!---#shared-recipe-->
 
                 <div class="hide" id="cuff-down-recipe">
-                    <p>Cast on {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches</p>
-                </div>
+                    <h3>Cuff</h3>
+                    <p>Cast on {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches loosely or with a stretchy cast-on. Join to work in the round, being careful not to twist.</p>
+                    <p>Round 1: [k2, p2] around<br />
+                    Repeat round 1 until ribbing measures one inch, or until desired length.</p>
+                <p>
+                </div><!---#cuff-down-recipe-->
                 <div class="hide" id="toe-up-recipe">
                     <p>Toe up recipe here</p>
-                </div>
-            </div>
+                </div><!---#toe-up-recipe-->
+            </div><!---#calculator-->
+        </div><!---#container-->
+            <footer>Contact <a href="http://rachelleggett.com" target="_blank">Rachel Leggett</a> with feedback or feature requests, or <a href="https://github.com/rmleg/sock-knitters-notebook" target="_blank">fork this project on GitHub</a>.</footer>
+
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -41,11 +41,19 @@
     display: block !important;
 }
 
-#calculator.toeUp #toe-up-recipe {
+#calculator.toeUp #toe-up-recipe,
+#calculator.toeUp #shared-recipe {
     display: block !important;
 }
 
+#calculator.cuffDown.shortRow #shared-recipe,
+#calculator.cuffDown.flap #shared-recipe,
 #calculator.cuffDown.shortRow #cuff-down-recipe,
 #calculator.cuffDown.flap #cuff-down-recipe {
     display: block !important;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
 }

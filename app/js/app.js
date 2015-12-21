@@ -6,6 +6,9 @@ var sknApp = angular.module('sknApp', [
 
 sknApp.controller('StitchCalc', ['$scope', function($scope) {
     $scope.needSts = function(stsPerIn, circumference) {
-        return 0.9 * stsPerIn * circumference;
-    }
+        if(stsPerIn && circumference) {
+            return 0.9 * stsPerIn * circumference;
+        }
+        else return 0;
+    };
 }]);
