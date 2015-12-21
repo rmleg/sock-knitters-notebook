@@ -29,7 +29,7 @@
                 <input type="text" ng-model="circumference"></input>
             </label>
         </form>
-        <p>You need {{needSts(stsPerIn, circumference) | floorFour | number}} stitches.</p>
+        <p>You need {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches.</p>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

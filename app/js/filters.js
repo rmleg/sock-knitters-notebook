@@ -1,17 +1,17 @@
-/* Filter for finding the next-smallest multiple of four */
-angular.module('sknFilters', []).filter('floorFour', function() {
-    return function(input) {
-        if(input % 4 === 0) {
+/* Filter for finding the next-smallest multiple of input number */
+angular.module('sknFilters', []).filter('floorMult', function() {
+    return function(input, multSize) {
+        if(input % multSize === 0) {
             return input;
         }
         else {
             var inputFloor = Math.floor(input);
-            if(inputFloor % 4 === 0) {
+            if(inputFloor % multSize === 0) {
                 return inputFloor;
             }
             else {
-                for(var i = 3; i > 0; --i) {
-                    if((inputFloor - i) % 4 === 0) {
+                for(var i = 1; i < multSize; ++i) {
+                    if((inputFloor - i) % multSize === 0) {
                         return inputFloor - i;
                     }
                 }
