@@ -25,7 +25,7 @@ sknApp.controller('StitchCalc', ['$scope', function($scope) {
                 return need;
             }
             else {
-                for(var i = 1; i < multSize; ++i) {
+                for(var i = 1; i < mult; ++i) {
                     if((need - i) % mult === 0) {
                         return need - i;
                     }
