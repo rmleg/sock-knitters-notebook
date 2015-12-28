@@ -66,15 +66,66 @@
                 <div class="hide" id="shared-recipe">
                     <h2>Your Sock Recipe</h2>
                     <h3>Abbreviations</h3>
-                    <p class="abbrList">k = knit<br />p = purl<br />sl = slip (purlwise unless otherwise specified<br />wyib = with yarn in back<br />wyif = with yarn in front<br />p2tog = purl two together<br />ssk = <a href="https://www.lionbrand.com/faq/80.html?language=" target="_blank">slip, slip, knit</a><br />RS = right side<br />WS = wrong side</p>
+                    <p class="abbrList">k = knit<br />p = purl<br />sl = slip (purlwise unless otherwise specified<br />wyib = with yarn in back<br />wyif = with yarn in front<br />p2tog = purl two together<br />ssk = <a href="https://www.lionbrand.com/faq/80.html?language=" target="_blank">slip, slip, knit</a><br />RS = right side<br />WS = wrong side<br />BOR = beginning of round</p>
                 </div><!---#shared-recipe-->
 
                 <div class="hide" id="cuff-down-recipe">
-                    <h3>Cuff</h3>
-                    <p>Cast on {{needSts(stsPerIn, circumference) | floorMult:4 | number}} stitches loosely or with a stretchy cast-on. Join to work in the round, being careful not to twist.</p>
+                    <h3>Cuff and Leg</h3>
+                    <p>Cast on {{saveNeedSts(stsPerIn, circumference, 4)}} stitches loosely or with a stretchy cast-on. Join to work in the round, being careful not to twist.</p>
                     <p>Round 1: [k2, p2] around<br />
                     Repeat round 1 until ribbing measures one inch, or until desired length.</p>
-                <p>
+                    <p>Knit every row until work measures {{legLength(heelType)}} inches, or until desired length.</p>
+                    <h3>Heel</h3>
+                    <div class="hide" id="flapInstructions">
+                        <h4>Heel Flap</h4>
+                        <p>This flap uses a slip-stitch heel stitch.  Feel free to substitute any stitch pattern, as long as the length ends up the same.  One suggestion is the <a href="http://www.haveayarn.ca/stitch/03_2009_stitch_of_the_month.htm" target="_blank">eye of partridge heel stitch</a>.</p>
+                        <p>The flap is worked flat over the next {{saveNeedSts(stsPerIn, circumference, 4) / 2}} stitches.</p>
+                        <p>Row 1 (RS): [k1, sl1 wyib] repeat to end<br />
+                        Row 2 (WS): p to last stich, sl1 wyif
+                        </p>
+                        <p>Repeat rows 1 and 2 {{(saveNeedSts(stsPerIn, circumference, 4) / 8) - 1}} more times, or until flap is length desired, ending after a RS row.</p>
+
+                        <h4>Heel Turn</h4>
+                        <p>Row 1 (WS): p{{(saveNeedSts(stsPerIn, circumference, 4) / 4) + 2}}, p2tog, p1, turn<br />
+                        Row 2 (RS): sl1 wyib, k5, ssk, k1, turn<br />
+                        Row 3 (WS): sl1 wyif, p to one stitch before gap, p2tog, p1, turn<br />
+                        Row 4 (RS): sl1 wyib, k to one stitch before gap, ssk, k1, turn</p>
+                        <p>Repeat rows 3 and 4 until all gaps have been closed and all heel stitches have been worked, ending with a RS row.  The last repeats of rows 3 and 4 will not include the final p1 and k1, respectively.</p>
+
+                        <h4>Return to working in the round</h4>
+                        <p>Your heel turn has just ended on a RS row. Continue working this RS row in the following manner:
+                        <p>
+                        Pick up and knit each edge stitch along first side of the heel flap<br />
+                        Place marker<br />
+                        Knit across the instep (i.e. the stitches you have not been working for the heel)<br />
+                        Place marker<br />
+                        Pick up and knit each edge stitch along the other side of the heel flap<br />
+                        Knit all heel stitches, placing a marker halfway through the heel to mark the beginning of the round, if desired</p>
+                        <p>You have now returned all stitches to your needles and are ready to continue working in the round.</p>
+                        <h4>Gusset</h4>
+                        <p>Row 1: k to 3 sts before marker, k2tog, k1, k across instep (to marker), k1, ssk, k to BOR<br />
+                        Row 2: k around</p> 
+                        <p>Repeat rows 1 and 2 until the stitch count has returned to {{saveNeedSts(stsPerIn, circumference, 4)}}.</p>
+
+                        <h3>Foot</h3>
+                        <p>Leave the side markers from the gusset in, or use some other method to stay aware of which half of the stitches is your instep and which half is your sole. You will need this information for the toe.</p>
+                        <p>Knit every row until work measures {{length - 2}} inches.</p>
+
+                        <h3>Toe</h3>
+                        <p>Knit to the beginning of the instep stitches, then begin the toe decreases as follows:</p>
+                        <p>Row 1, instep: k1, ssk, k to last 3 sts of instep, k2tog, k1<br />
+                        Row 1, sole: k1, ssk, k to last 3 sts of sole, k2tog, k1<br />
+                        Row 2: k around</p>
+                        <p>Repeat rows 1 and 2 until you have {{saveNeedSts(stsPerIn, circumference, 4) / 2}} stitches remaining.  Then, repeat row 1 twice more.</p>
+                        <p>At the end of your decreases, you should have {{(saveNeedSts(stsPerIn, circumference, 4) / 2) - 8}} stitches remaining, {{((saveNeedSts(stsPerIn, circumference, 4) / 2) - 8) / 2}} on the instep and {{((saveNeedSts(stsPerIn, circumference, 4) / 2) - 8) / 2}} on the sole.</p>
+                        <p>Cut the yarn, leaving a tail long enough to graft the toe.  Use the <a href="http://www.knitty.com/ISSUEsummer04/FEATtheresasum04.html" target="_blank">Kitchener stitch</a> to graft the toe closed.</p>
+
+                        <p>
+                    </div>
+                    <div class="hide" id="shortRowInstructions">
+                        test short row
+                    </div>
+
                 </div><!---#cuff-down-recipe-->
                 <div class="hide" id="toe-up-recipe">
                     <p>Toe up recipe here</p>

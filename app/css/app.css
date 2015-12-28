@@ -53,6 +53,11 @@
     display: block !important;
 }
 
+#calculator.cuffDown.shortRow #shortRowInstructions,
+#calculator.cuffDown.flap #flapInstructions {
+    display: block !important;
+}
+
 footer {
     text-align: center;
     margin-top: 50px;
