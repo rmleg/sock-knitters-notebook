@@ -23,6 +23,7 @@
     <body>
         <div class="container">
             <div id="calculator" ng-controller="StitchCalc" class="{{constrDir}} {{heelType}}">
+                <div id="survey">
                 <h1>Generate a Sock Recipe</h1>
                 <p>This page will walk you through building a personalized sock recipe so you can knit perfectly-fitted socks for everyone you know.  This gives you the basic outline of a vanilla sock--trial and error with this as a baseline will help you get that perfect comfy fit.</p>
                 <p>Do not refresh the page, or all data will be lost and you will have to start over.</p>
@@ -62,7 +63,8 @@
                         <p><input type="radio" name="heelType" value="shortRow" class="top-down-heel toe-up-heel" ng-model="heelType"> Short row heel</input></p>
                     </form>
                 </div><!---#heel-choice-->
-
+            </div><!---#survey-->
+            <div id="recipe">
                 <div class="hide" id="shared-recipe">
                     <h2>Your Sock Recipe</h2>
                     <h3>Abbreviations</h3>
@@ -144,6 +146,7 @@
                 <div class="hide" id="toe-up-recipe">
                     <p>Toe up recipe here</p>
                 </div><!---#toe-up-recipe-->
+            </div><!---#recipe-->
             </div><!---#calculator-->
         </div><!---#container-->
             <footer>Contact <a href="http://rachelleggett.com" target="_blank">Rachel Leggett</a> with feedback or feature requests, or <a href="https://github.com/rmleg/sock-knitters-notebook" target="_blank">fork this project on GitHub</a>.</footer>
