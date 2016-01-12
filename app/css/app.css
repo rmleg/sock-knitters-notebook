@@ -54,8 +54,22 @@
 }
 
 #calculator.cuffDown.shortRow #shortRowInstructions,
-#calculator.cuffDown.flap #flapInstructions {
+#calculator.cuffDown.flap #flapInstructions,
+#calculator.toeUp #shortRowInstructions {
     display: block !important;
+}
+
+.shortRow .flapAbbr,
+.toeUp .flapAbbr {
+    display: none;
+}
+
+.flap .shortRowAbbr {
+    display: none;
+}
+
+.cuffDown .toeUpAbbr {
+    display: none;
 }
 
 #survey,
