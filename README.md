@@ -13,3 +13,4 @@ This is a web app for sock knitters everywhere.  Bootstrapped from the angular-s
 * With account
   * Save sock recipes
   * Save foot measurements
+* Custom stylesheet (i.e. not Bootstrap)
