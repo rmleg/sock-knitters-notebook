@@ -2,8 +2,13 @@
 
 This is a web app for sock knitters everywhere.  Bootstrapped from the angular-seed project.
 
+##Version 1.0 - January 12, 2016
+* Generate a sock recipe based on foot measurements, gauge information, and construction selections.
+
+##Next up
+* Save/print button that prints only the recipe
+
 ##Planned features
-* Calculate stitches needed for various parts of sock construction / generate a sock recipe - available without an account
 * Authenticate with Google
 * With account
   * Save sock recipes
