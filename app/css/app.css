@@ -87,6 +87,10 @@
     #recipe {
         width: 100%;
     }
+
+    #recipe {
+        padding-left: 0;
+    }
 }
 
 footer {
