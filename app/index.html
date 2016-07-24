@@ -22,8 +22,8 @@
     </head>
     <body>
         <div class="container">
-            <div id="calculator" ng-controller="StitchCalc" class="{{constrDir}} {{heelType}}">
-                <div id="survey">
+            <div id="calculator" ng-controller="StitchCalc" class="row {{constrDir}} {{heelType}}">
+                <div id="survey" class="col-md-6">
                 <h1>Generate a Sock Recipe</h1>
                 <p>This page will walk you through building a personalized sock recipe so you can knit perfectly-fitted socks for everyone you know.  This gives you the basic outline of a vanilla sock--trial and error with this as a baseline will help you get that perfect comfy fit.</p>
                 <p>Do not refresh the page, or all data will be lost and you will have to start over.</p>
@@ -64,7 +64,8 @@
                     </form>
                 </div><!---#heel-choice-->
             </div><!---#survey-->
-            <div id="recipe">
+            <div id="recipe" class="col-md-6">
+                <h3 id="look-here">Your sock recipe will appear here.</h2>
                 <div class="hide" id="shared-recipe">
                     <h2>Your Sock Recipe</h2>
                     <p>These instructions are written for the magic loop or two circular needles methods, as they reference the first needle and second needle.  To adapt for dpns, the first needle is dpn one and two and the second needle is dpn three and four.</p>
@@ -197,7 +198,8 @@
                 </div><!---#toe-up-recipe-->
             </div><!---#recipe-->
         </div><!---#calculator-->
-        <h2>Crafting Posts from the Author</h2>
+        <hr />
+        <h3>Crafting Posts from the Author's Blog</h3>
             <div id="crafting-posts" class="row"  ng-controller="CraftingPosts" ng-cloak>
                 <div class="crafting-post col-md-3" ng-repeat="craftingPost in craftingPosts">
                     <p><a href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}}<br />
