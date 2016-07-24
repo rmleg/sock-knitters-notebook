@@ -1,7 +1,6 @@
 /* app css stylesheet */
 
 body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -83,36 +82,35 @@ body {
     display: none;
 }
 
-/*#survey,
-#recipe {
-    width: 50%;
-    float: left;
-}*/
-
-#recipe {
-    padding-left: 20px;
-}
-
-@media screen and (max-width: 700px) {
-   /* #survey,
-    #recipe {
-        width: 100%;
-    }*/
-
-    #recipe {
-        padding-left: 0;
-    }
-}
-
-/*footer {
-    text-align: center;
-    margin-top: 50px;
-}*/
-
 .crafting-post {
     text-align: center;
 }
 
 .crafting-post img {
     max-width: 100%;
+}
+
+span.posted-date {
+    text-align: right;
+    font-weight: bold;
+    color: #666;
+}
+
+a.post-link {
+    text-align: left;
+}
+
+.crafting-post a.img-link {
+    opacity: .8;
+    transition: opacity .5s ease;
+}
+
+.crafting-post a.img-link:hover {
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+.crafting-post .row.post-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

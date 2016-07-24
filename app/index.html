@@ -202,10 +202,11 @@
         <h3>Crafting Posts from the Author's Blog</h3>
             <div id="crafting-posts" class="row"  ng-controller="CraftingPosts" ng-cloak>
                 <div class="crafting-post col-md-3" ng-repeat="craftingPost in craftingPosts">
-                    <a href="{{craftingPost.link}}" target="_blank"><img src="{{craftingPost._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url}}" alt="{{craftingPost._embedded['wp:featuredmedia'][0].alt_text}}"/></a>
-                    <div class="row">
-                        <a class="col-md-7" href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}} &raquo;</a>
-                        <span class="col-md-5">Published {{craftingPost.date | date}}</span></div>
+                    <a class="img-link" href="{{craftingPost.link}}" target="_blank"><img src="{{craftingPost._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url}}" alt="{{craftingPost._embedded['wp:featuredmedia'][0].alt_text}}"/></a>
+                    <div class="row post-info">
+                        <span class="col-md-5 posted-date">{{craftingPost.date | date}}</span>
+                        <a class="col-md-7 post-link" href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}} &raquo;</a>
+                    </div>
                 </div><!---.crafting-post-->
             </div><!---.#crafing-posts-->
 
