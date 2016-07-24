@@ -22,11 +22,6 @@
     </head>
     <body>
         <div class="container">
-            <div ng-controller="CraftingPosts" ng-cloak>
-                <div ng-repeat="craftingPost in craftingPosts">
-                    <a href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}}</a>
-                </div>
-            </div>
             <div id="calculator" ng-controller="StitchCalc" class="{{constrDir}} {{heelType}}">
                 <div id="survey">
                 <h1>Generate a Sock Recipe</h1>
@@ -201,7 +196,15 @@
 
                 </div><!---#toe-up-recipe-->
             </div><!---#recipe-->
-            </div><!---#calculator-->
+        </div><!---#calculator-->
+        <h2>Crafting Posts from the Author</h2>
+            <div id="crafting-posts" class="row"  ng-controller="CraftingPosts" ng-cloak>
+                <div class="crafting-post col-md-3" ng-repeat="craftingPost in craftingPosts">
+                    <p><a href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}}<br />
+                        <img src="{{craftingPost._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url}}" alt="{{craftingPost._embedded['wp:featuredmedia'][0].alt_text}}"/></a></p>
+                </div><!---.crafting-post-->
+            </div><!---.#crafing-posts-->
+
         </div><!---#container-->
             <footer>Contact <a href="http://rachelleggett.com" target="_blank">Rachel Leggett</a> with feedback or feature requests, or <a href="https://github.com/rmleg/sock-knitters-notebook" target="_blank">fork this project on GitHub</a>.</footer>
 

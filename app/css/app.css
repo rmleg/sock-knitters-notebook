@@ -97,3 +97,11 @@ footer {
     text-align: center;
     margin-top: 50px;
 }
+
+.crafting-post {
+    text-align: center;
+}
+
+.crafting-post img {
+    max-width: 100%;
+}

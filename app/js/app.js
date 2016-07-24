@@ -46,7 +46,7 @@ sknApp.controller('StitchCalc', ['$scope', function($scope) {
 }]);
 
 sknApp.controller('CraftingPosts', ['$scope', '$http', function($scope, $http) {
-    var get_url = 'http://rachel.nu/wp-json/wp/v2/posts?category=crafting&per_page=4';
+    var get_url = 'http://rachel.nu/wp-json/wp/v2/posts?filter[category_name]=crafting&per_page=4&_embed';
     $http.get(get_url).then(function(craftingPosts) {
         $scope.craftingPosts = craftingPosts.data;
     });
