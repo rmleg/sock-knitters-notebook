@@ -22,6 +22,11 @@
     </head>
     <body>
         <div class="container">
+            <div ng-controller="CraftingPosts" ng-cloak>
+                <div ng-repeat="craftingPost in craftingPosts">
+                    <a href="{{craftingPost.link}}" target="_blank">{{craftingPost.title.rendered}}</a>
+                </div>
+            </div>
             <div id="calculator" ng-controller="StitchCalc" class="{{constrDir}} {{heelType}}">
                 <div id="survey">
                 <h1>Generate a Sock Recipe</h1>
