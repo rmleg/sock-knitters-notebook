@@ -22,6 +22,12 @@
     </head>
     <body>
         <div class="container">
+            <header>
+            <a href="http://arbortwist.com" target="_blank">
+                <img src="images/arbortwistlogo.png" alt="Arbor Twist logo">
+            </a><br>
+            <h4>This sock pattern generator is provided for free by <a href="http://arbortwist.com" target="_blank">Arbor Twist</a>.</h4>
+            </header>
             <div id="calculator" ng-controller="StitchCalc" class="row {{constrDir}} {{heelType}}">
                 <div id="survey" class="col-md-6">
                 <h1>Generate a Sock Recipe</h1>
@@ -199,7 +205,7 @@
             </div><!---#recipe-->
         </div><!---#calculator-->
         <hr />
-        <h3>Crafting Posts from the Author's Blog</h3>
+        <h3>Posts about Crafting from the Author's Blog</h3>
             <div id="crafting-posts" class="row"  ng-controller="CraftingPosts" ng-cloak>
                 <div class="crafting-post col-md-3" ng-repeat="craftingPost in craftingPosts">
                     <a class="img-link" href="{{craftingPost.link}}" target="_blank"><img src="{{craftingPost._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url}}" alt="{{craftingPost._embedded['wp:featuredmedia'][0].alt_text}}"/></a>
