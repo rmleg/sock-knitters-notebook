@@ -1,5 +1,6 @@
 # Sock Knitter's Notebook
 
+Hosted at: [arbortwist.com/knitsocks](http://arbortwist.com/knitsocks)
 This is a web app for sock knitters everywhere.  Bootstrapped from the angular-seed project.
 
 ## Version 1.0 - January 12, 2016
